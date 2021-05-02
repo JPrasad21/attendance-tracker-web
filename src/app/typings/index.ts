@@ -12,3 +12,9 @@ export interface StudentDetails {
   sectionId: string;
   student: UserDetails;
 }
+export interface AttendanceDetails {
+  date: Date;
+  studentId: string;
+  classId: string;
+  sectionId: string;
+}

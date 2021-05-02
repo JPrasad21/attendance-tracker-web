@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { Router, UrlSegment } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { BaseService } from 'src/app/core/base/base.service';
+import { UserDetails } from 'src/app/typings';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  getUserDetails$ = new BehaviorSubject<any>(null);
+  getUserDetails$ = new BehaviorSubject<UserDetails>(null);
   redirectUrl: UrlSegment[] = [];
 
   constructor(private httpService: BaseService, private router: Router) { }

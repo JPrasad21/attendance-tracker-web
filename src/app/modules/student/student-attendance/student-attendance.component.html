@@ -1,1 +1,17 @@
-<p>student-attendance works!</p>
+<div class="attendanceWrapper">
+  <h4 class="attendanceHeader">Attendance</h4>
+  <div *ngIf="!attendanceExist" class="attendanceSection">
+    <p class="displayText">You haven't updated attendance for today</p>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="markPresent()"
+    >
+      Mark Present
+    </button>
+  </div>
+  <div *ngIf="attendanceExist" class="attendanceSection">
+    <p class="displayText">You have updated attendance for today</p>
+  </div>
+</div>

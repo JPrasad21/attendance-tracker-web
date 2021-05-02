@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BaseService } from 'src/app/core/base/base.service';
+import { AttendanceDetails } from 'src/app/typings';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,10 @@ export class StudentApiService {
   getStudentDetails(studentId: string) {
     return this.httpService.get(`/user/student/${studentId}`);
   }
-  markAttendance(studentId: string) {
-    return this.httpService.post(`/attendance/student/`, {});
+  checkAttendance(studentId: string) {
+    return this.httpService.get(`/attendance/check/${studentId}`);
+  }
+  markAttendance(attendanceObj: AttendanceDetails) {
+    return this.httpService.post(`/attendance/`, attendanceObj);
   }
 }

@@ -21,6 +21,7 @@ export class ProfileComponent implements OnInit {
     const student = this.authService.getUserDetails$.value;
     this.studentService.getStudentDetails(student._id).subscribe((x: any) => {
       this.studentDetails = x.data;
+      this.studentService.studentDetails = this.studentDetails;
     })
   }
 }

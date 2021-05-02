@@ -4,6 +4,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { StudentRoutingModule } from './student-routing.module';
 import { StudentLayoutComponent } from './student-layout/student-layout.component';
 import { StudentAttendanceComponent } from './student-attendance/student-attendance.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -15,7 +16,8 @@ import { StudentAttendanceComponent } from './student-attendance/student-attenda
   ],
   imports: [
     CommonModule,
-    StudentRoutingModule
+    StudentRoutingModule,
+    SharedModule
   ]
 })
 export class StudentModule { }
