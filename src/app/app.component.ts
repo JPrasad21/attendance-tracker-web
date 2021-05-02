@@ -9,6 +9,7 @@ import { AuthService } from './modules/auth/auth.service';
 })
 export class AppComponent {
   title = 'attendance-tracker-web';
+  userDetails = null;
   constructor(private authService: AuthService, private route: ActivatedRoute) {
     this.authService.redirectUrl = route.snapshot.url;
     if (this.authService.isLoggedIn()) {
@@ -16,5 +17,9 @@ export class AppComponent {
     } else {
       this.authService.redirectToLoginPage();
     }
+
+    this.authService.getUserDetails$.subscribe(x => {
+      this.userDetails = x;
+    })
   }
 }
