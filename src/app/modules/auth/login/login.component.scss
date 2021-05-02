@@ -1,0 +1,23 @@
+@import '/src/assets/styles/variables.scss';
+.loginWrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: $white-10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .loginForm {
+    width: 400px;
+    background: $white-1;
+    .formFields {
+      width: 100%;
+      margin: 10px 0;
+    }
+    .buttonWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+}
