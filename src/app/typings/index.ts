@@ -18,3 +18,21 @@ export interface AttendanceDetails {
   classId: string;
   sectionId: string;
 }
+export interface ClassViewModel {
+  className: string;
+  classId: string
+  sectionName: string;
+  sectionId: string;
+  students: UserDetails[];
+  percentage: string;
+}
+export interface ClassDetails {
+  _id: string;
+  className: string;
+  sections: SectionDetails[];
+}
+export interface SectionDetails {
+  _id: string;
+  sectionName: string;
+  studentId: UserDetails[];
+}
