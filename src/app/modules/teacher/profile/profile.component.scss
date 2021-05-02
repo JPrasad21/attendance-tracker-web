@@ -1,0 +1,29 @@
+@import "/src/assets//styles/variables.scss";
+
+.profileWrapper {
+  height: 100%;
+  overflow-y: auto;
+  padding: 40px;
+  .profileHeader {
+    color: $font-text-1;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .profileSection {
+    margin-top: 40px;
+    .profileSectionRow {
+      display: flex;
+      .label {
+        min-width: 200px;
+        color: $font-text-3;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .value {
+        color: $font-text-1;
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+  }
+}

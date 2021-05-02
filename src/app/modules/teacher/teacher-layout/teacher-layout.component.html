@@ -1,0 +1,30 @@
+<div class="layoutWrapper">
+  <section class="sideMenu">
+    <div
+      class="menu"
+      [ngClass]="{
+        activeMenu: selectedMenu === 'Dashboard'
+      }"
+      (click)="onMenuChange('Dashboard')"
+    >
+      Dashboard
+    </div>
+    <div
+      class="menu"
+      [ngClass]="{
+        activeMenu: selectedMenu === 'Attendance'
+      }"
+      (click)="onMenuChange('Attendance')"
+    >
+      Attendance
+    </div>
+  </section>
+  <div class="mainSection">
+    <app-teacher-profile
+      *ngIf="selectedMenu === 'Dashboard'"
+    ></app-teacher-profile>
+    <app-student-attendance
+      *ngIf="selectedMenu === 'Attendance'"
+    ></app-student-attendance>
+  </div>
+</div>

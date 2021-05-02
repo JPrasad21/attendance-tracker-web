@@ -30,9 +30,18 @@
     padding: 0;
     list-style: none;
     gap: 40px;
-    li {
-      color: $primary;
+    .profileIcon {
       cursor: pointer;
     }
   }
+}
+
+.menuItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  cursor: pointer;
+  color: $font-text-2;
+  font-weight: 600;
 }

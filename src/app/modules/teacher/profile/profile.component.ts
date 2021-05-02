@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { UserDetails } from 'src/app/typings';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
-  selector: 'app-profile',
+  selector: 'app-teacher-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  teacherDetails: UserDetails;
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.teacherDetails = this.authService.getUserDetails$.value;
   }
 
 }

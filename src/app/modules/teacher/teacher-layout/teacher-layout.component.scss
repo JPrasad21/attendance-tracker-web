@@ -1,0 +1,29 @@
+@import "/src/assets//styles/variables.scss";
+.layoutWrapper {
+  display: flex;
+  height: 100%;
+  .sideMenu {
+    flex: 1 1 200px;
+    background-color: $white-13;
+    .menu {
+      width: 100%;
+      height: 75px;
+      color: $font-text-2;
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    .activeMenu {
+      color: $font-text-1;
+      font-size: 14px;
+      font-weight: 600;
+      background-color: $white-11;
+    }
+  }
+  .mainSection {
+    flex: 1 1 calc(100% - 200px);
+  }
+}

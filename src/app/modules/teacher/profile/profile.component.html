@@ -1,1 +1,13 @@
-<p>profile works!</p>
+<div class="profileWrapper">
+  <h4 class="profileHeader">Profile</h4>
+  <div *ngIf="teacherDetails" class="profileSection">
+    <div class="profileSectionRow">
+      <p class="label">Name</p>
+      <p class="value">{{ teacherDetails.fullName }}</p>
+    </div>
+    <div class="profileSectionRow">
+      <p class="label">Email</p>
+      <p class="value">{{ teacherDetails.email }}</p>
+    </div>
+  </div>
+</div>
