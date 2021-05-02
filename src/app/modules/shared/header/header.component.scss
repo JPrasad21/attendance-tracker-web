@@ -1,4 +1,4 @@
-@import 'src/assets/styles/variables.scss';
+@import "src/assets/styles/variables.scss";
 .header {
   display: flex;
   justify-content: space-between;
@@ -7,6 +7,7 @@
   height: 100%;
   background: #fff;
   border-bottom: 1px solid #bbbbbb;
+  box-sizing: border-box;
   .title-wrapper {
     display: flex;
     align-items: center;
