@@ -7,10 +7,8 @@ import { AuthModule } from './modules/auth/auth.module';
 import { StudentModule } from './modules/student/student.module';
 import { TeacherModule } from './modules/teacher/teacher.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SharedModule } from './modules/shared/shared.module';
-import { AuthService } from './modules/auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
-import { BaseService } from './core/base/base.service';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -23,9 +21,10 @@ import { BaseService } from './core/base/base.service';
     StudentModule,
     TeacherModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
-  providers: [AuthService, BaseService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

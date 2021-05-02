@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, UrlSegment } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { BaseService } from 'src/app/core/base/base.service';
 
@@ -8,38 +8,41 @@ import { BaseService } from 'src/app/core/base/base.service';
 })
 export class AuthService {
   getUserDetails$ = new BehaviorSubject<any>(null);
+  redirectUrl: UrlSegment[] = [];
 
-  constructor(private httpService: BaseService, private router: Router) {}
+  constructor(private httpService: BaseService, private router: Router) { }
   login(user: any) {
     this.httpService.post('/login', user).subscribe(
       (res: any) => {
-        this.updateUserDetails(res);
-        this.getUserDetails$.next(res);
-        this.redirectToRoleSpecificPage(res);
+        this.updateUserDetails(res.data);
+        this.getUserDetails$.next(res.data);
+        this.redirectToRoleSpecificPage();
       },
-      (err) => {
-
-      }
+      (err) => { }
     );
   }
 
   updateUserDetails(user) {
-    localStorage.setItem("user-atapp", JSON.stringify(user));
-    localStorage.setItem("user-token-atapp", JSON.stringify(user.token));
+    localStorage.setItem('user-atapp', JSON.stringify(user));
+    localStorage.setItem('user-token-atapp', JSON.stringify(user.token));
   }
 
   logout() {
     localStorage.clear();
+    this.getUserDetails$.next(null);
     this.router.navigate(['/']);
   }
-  isLoggedIn(updateRoute = false) {
-    const user = localStorage.getItem("user-atapp");
-    this.getUserDetails$.next(user);
-    if(updateRoute) this.redirectToRoleSpecificPage(user);
+  isLoggedIn() {
+    const user = localStorage.getItem('user-atapp');
+    this.getUserDetails$.next(JSON.parse(user));
     return !!user;
   }
-  redirectToRoleSpecificPage(user) {
-    user.role === 'Student' ?
-    this.router.navigate(['/student']) : this.router.navigate(['/teacher'])
+  redirectToRoleSpecificPage() {
+    const user = this.getUserDetails$.value;
+    const url = !!this.redirectUrl.length ? this.redirectUrl : [`/${user.role.toLowerCase()}`];
+    this.router.navigate(url);
+  }
+  redirectToLoginPage() {
+    this.router.navigate(['/']);
   }
 }
