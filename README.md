@@ -1,27 +1,54 @@
-# AttendanceTrackerWeb
+# Attendance Tracker UI
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.7.
 
-## Development server
+## Project Setup
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Step 1: Clone the repository using `git clone https://github.com/JPrasad21/attendance-tracker-web`.
 
-## Code scaffolding
+Step 2: Run `npm install` to install all the dependencies.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Step 3: Run `ng serve` to start the application.
 
-## Build
+Step 4: Navigate to `http://localhost:4200/`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Load Data into Database
 
-## Running unit tests
+Step 1: Clone the [Attendance tracker server](https://github.com/JPrasad21/attendance-tracker-server) application.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Step 2: Follow the instructions given in the readme.md file for installations.
 
-## Running end-to-end tests
+Step 3: Navigate to [http://localhost:4200/seeder](http://localhost:4200/seeder) to load data to the Database.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Login as Teacher
 
-## Further help
+Navigate to [http://localhost:4200](http://localhost:4200) for login page.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+UserName: **`teacher@gmail.com`**
+
+Password: **`teacher2021@gmail.com`**
+
+## Login as Student
+
+Navigate to [http://localhost:4200](http://localhost:4200) for login page.
+
+UserName: `student{N}-{C}-{S}@gmail.com`
+
+Password: `student{N}-{C}-{S}`
+
+Where,
+
+  {N} denotes student number => 1, 2, 3, 4, 5
+
+  {C} denotes class number   => 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+
+  {S} denotes section number => A, B, C, D
+
+
+Example:
+
+UserName: **`student1-10-A@gmail.com`**
+
+Password: **`student1-10-A`**
+
+
