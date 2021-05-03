@@ -11,6 +11,8 @@ export interface StudentDetails {
   sectionName: string;
   sectionId: string;
   student: UserDetails;
+  attendanceList: AttendanceDetails[];
+  attendancePercentage: number;
 }
 export interface AttendanceDetails {
   date: Date;

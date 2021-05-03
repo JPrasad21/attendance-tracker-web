@@ -26,7 +26,6 @@ export class TeacherAttendanceComponent implements OnInit, AfterViewInit {
     this.getClassAndSectionsInfo();
   }
   ngAfterViewInit() {
-
   }
   getClassAndSectionsInfo() {
     this.teacherService.getClassAndSectionsInfo().subscribe((x: any) => {
@@ -52,10 +51,8 @@ export class TeacherAttendanceComponent implements OnInit, AfterViewInit {
     });
     this.classViewModel = classView;
     this.dataSource = new MatTableDataSource(this.classViewModel);
-    setTimeout(() => {
-      this.dataSource.sort = this.sort;
-      this.dataSource.paginator = this.paginator;
-    }, 500);
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
 
   }
 }

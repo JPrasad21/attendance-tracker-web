@@ -11,6 +11,8 @@ import { StudentService } from '../student.service';
 export class ProfileComponent implements OnInit {
 
   studentDetails: StudentDetails;
+  currentMonth = new Date().getMonth();
+  months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   constructor(private authService: AuthService, private studentService: StudentService) { }
 
   ngOnInit(): void {
