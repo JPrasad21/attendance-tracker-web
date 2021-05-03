@@ -27,9 +27,9 @@ export class StudentAttendanceComponent implements OnInit {
     const student = this.studentService.studentDetails;
     const attendanceObj: AttendanceDetails = {
       date: new Date(),
-      studentId: student.student._id,
-      classId: student.classId,
-      sectionId: student.sectionId
+      studentId: student._id,
+      classId: student.classDetails[0]._id,
+      status: 'Present'
     }
     this.studentService.markAttendance(attendanceObj).subscribe((x: any) => {
       this.attendanceExist = x.data;

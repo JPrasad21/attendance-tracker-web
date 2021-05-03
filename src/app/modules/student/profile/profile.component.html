@@ -3,26 +3,33 @@
   <div *ngIf="studentDetails" class="profileSection">
     <div class="profileSectionRow">
       <p class="label">Name</p>
-      <p class="value">{{ studentDetails.student.fullName }}</p>
+      <p class="value">{{ studentDetails.fullName }}</p>
     </div>
     <div class="profileSectionRow">
       <p class="label">Email</p>
-      <p class="value">{{ studentDetails.student.email }}</p>
+      <p class="value">{{ studentDetails.email }}</p>
     </div>
     <div class="profileSectionRow">
       <p class="label">Class</p>
-      <p class="value">{{ studentDetails.className }}</p>
+      <p class="value">{{ studentDetails.classDetails[0].className }}</p>
     </div>
     <div class="profileSectionRow">
       <p class="label">Section</p>
-      <p class="value">{{ studentDetails.sectionName }}</p>
+      <p class="value">{{ studentDetails.classDetails[0].sectionName }}</p>
     </div>
     <div class="profileSectionRow">
       <p class="label">
         Attendance Percentage<br />
         for {{ months[currentMonth] }}
       </p>
-      <p class="value">{{ studentDetails.attendancePercentage }} %</p>
+      <p class="value">
+        {{
+          studentDetails.attendancePercentage
+            ? studentDetails.attendancePercentage
+            : 0
+        }}
+        %
+      </p>
     </div>
   </div>
 </div>

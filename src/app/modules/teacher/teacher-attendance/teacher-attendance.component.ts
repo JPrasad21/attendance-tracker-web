@@ -37,17 +37,17 @@ export class TeacherAttendanceComponent implements OnInit, AfterViewInit {
     let classView: ClassViewModel[] = [];
     this.classAndSections.forEach(classObj => {
       const { _id: classId, className } = classObj;
-      classObj.sections.forEach(section => {
-        const { _id: sectionId, sectionName, studentId } = section;
-        classView.push({
-          className,
-          classId,
-          sectionName,
-          sectionId,
-          students: studentId,
-          percentage: ''
-        })
-      })
+      // classObj.sections.forEach(section => {
+      //   const { _id: sectionId, sectionName, studentId } = section;
+      //   classView.push({
+      //     className,
+      //     classId,
+      //     sectionName,
+      //     sectionId,
+      //     students: studentId,
+      //     percentage: ''
+      //   })
+      // })
     });
     this.classViewModel = classView;
     this.dataSource = new MatTableDataSource(this.classViewModel);

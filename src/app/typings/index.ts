@@ -4,13 +4,13 @@ export interface UserDetails {
   email: string;
   fullName: string;
 }
-
-export interface StudentDetails {
+export interface ClassDetails {
   className: string;
-  classId: string;
   sectionName: string;
-  sectionId: string;
-  student: UserDetails;
+  _id: string;
+}
+export interface StudentDetails extends UserDetails {
+  classDetails: ClassDetails[];
   attendanceList: AttendanceDetails[];
   attendancePercentage: number;
 }
@@ -18,7 +18,7 @@ export interface AttendanceDetails {
   date: Date;
   studentId: string;
   classId: string;
-  sectionId: string;
+  status: string;
 }
 export interface ClassViewModel {
   className: string;
@@ -27,11 +27,6 @@ export interface ClassViewModel {
   sectionId: string;
   students: UserDetails[];
   percentage: string;
-}
-export interface ClassDetails {
-  _id: string;
-  className: string;
-  sections: SectionDetails[];
 }
 export interface SectionDetails {
   _id: string;
