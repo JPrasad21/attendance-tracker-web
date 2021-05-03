@@ -1,6 +1,10 @@
 <div class="attendanceWrapper">
   <app-class-view class="classView"></app-class-view>
-  <div class="studentsView">
-    <app-students-view></app-students-view>
+  <app-students-view
+    class="studentsView"
+    *ngIf="selectedClass"
+  ></app-students-view>
+  <div *ngIf="!selectedClass" class="studentsViewPlaceholder">
+    <p class="displayText">Select a class to view student details</p>
   </div>
 </div>

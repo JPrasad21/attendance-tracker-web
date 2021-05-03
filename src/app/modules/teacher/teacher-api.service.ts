@@ -12,4 +12,8 @@ export class TeacherApiService {
     return this.httpService.get(`/class/date/${encodeURIComponent(date)}`);
   }
 
+  getStudentsInfo(classId: string) {
+    return this.httpService.get(`/user/classStudents/${classId}`);
+  }
+
 }

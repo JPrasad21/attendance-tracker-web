@@ -1,0 +1,24 @@
+@import "/src/assets//styles/variables.scss";
+
+.studentViewWrapper {
+  height: 100%;
+  .studentViewHeader {
+    color: $font-text-1;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  .studentViewSection {
+    .studentView {
+      .studentViewTable {
+        width: 100%;
+        .tableRow {
+          cursor: pointer;
+          &:hover {
+            background: $white-11;
+          }
+        }
+      }
+    }
+  }
+}

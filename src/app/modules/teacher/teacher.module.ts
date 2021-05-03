@@ -10,6 +10,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { SharedModule } from '../shared/shared.module';
 import { ClassViewComponent } from './class-view/class-view.component';
 import { StudentsViewComponent } from './students-view/students-view.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { StudentsViewComponent } from './students-view/students-view.component';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     SharedModule
   ]
 })

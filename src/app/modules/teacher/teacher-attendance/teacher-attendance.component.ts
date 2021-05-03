@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClassDetails } from 'src/app/typings';
 import { TeacherService } from '../teacher.service';
 
 @Component({
@@ -8,7 +9,12 @@ import { TeacherService } from '../teacher.service';
 })
 export class TeacherAttendanceComponent implements OnInit {
 
-  constructor(private teacherService: TeacherService) { }
+  selectedClass: ClassDetails;
+  constructor(private teacherService: TeacherService) {
+    this.teacherService.selectedClass$.subscribe(x => {
+      this.selectedClass = x;
+    })
+  }
 
   ngOnInit(): void {
   }
