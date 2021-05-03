@@ -27,6 +27,9 @@ export class AuthService {
     localStorage.setItem('user-atapp', JSON.stringify(user));
     localStorage.setItem('user-token-atapp', JSON.stringify(user.token));
   }
+  getToken() {
+    return JSON.parse(localStorage.getItem('user-token-atapp'));
+  }
 
   logout() {
     localStorage.clear();

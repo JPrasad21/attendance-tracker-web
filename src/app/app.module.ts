@@ -7,9 +7,10 @@ import { AuthModule } from './modules/auth/auth.module';
 import { StudentModule } from './modules/student/student.module';
 import { TeacherModule } from './modules/teacher/teacher.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from 'src/app/modules/shared/shared.module';
+import { HttpTokenInterceptorService } from './interceptor/http-interceptor/http-interceptor';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { SharedModule } from 'src/app/modules/shared/shared.module';
     RouterModule,
     SharedModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpTokenInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
