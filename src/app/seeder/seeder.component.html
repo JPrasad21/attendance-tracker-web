@@ -1,0 +1,19 @@
+<div class="seederWrapper">
+  <div class="seeder">
+    <p>Click the button to add Class, Teacher and Students data to Database</p>
+    <div>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        (click)="addData()"
+      >
+        Add Data
+      </button>
+    </div>
+    <p *ngIf="loading">
+      Please wait. This might take few seconds to complete...
+    </p>
+    <p *ngIf="result && !loading">{{ result }}</p>
+  </div>
+</div>

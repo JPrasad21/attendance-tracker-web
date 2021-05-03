@@ -11,10 +11,12 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from 'src/app/modules/shared/shared.module';
 import { HttpTokenInterceptorService } from './interceptor/http-interceptor/http-interceptor';
+import { SeederComponent } from './seeder/seeder.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SeederComponent
   ],
   imports: [
     BrowserModule,

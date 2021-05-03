@@ -6,6 +6,9 @@ import { BaseService } from '../base/base.service';
 })
 export class ApiService {
 
-  constructor(private baseService: BaseService) { }
+  constructor(private httpService: BaseService) { }
 
+  addData() {
+    return this.httpService.post('/seeder', {});
+  }
 }

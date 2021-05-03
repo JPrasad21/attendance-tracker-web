@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guard/auth/auth.guard';
 import { RoleGuard } from './guard/role/role.guard';
+import { SeederComponent } from './seeder/seeder.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
     path: 'teacher',
     loadChildren: () => import('./modules/teacher/teacher.module').then(e => e.TeacherModule),
     canActivate: [AuthGuard, RoleGuard]
+  },
+  {
+    path: 'seeder',
+    component: SeederComponent
   }
 ];
 

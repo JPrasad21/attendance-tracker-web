@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from './modules/auth/auth.service';
 
 @Component({
@@ -8,11 +8,12 @@ import { AuthService } from './modules/auth/auth.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'attendance-tracker-web';
   userDetails = null;
   constructor(private authService: AuthService, private route: ActivatedRoute) {
     this.authService.redirectUrl = route.snapshot.url;
-    if (this.authService.isLoggedIn()) {
+    if (window.location.href.includes('seeder')) {
+
+    } else if (this.authService.isLoggedIn()) {
       this.authService.redirectToRoleSpecificPage();
     } else {
       this.authService.redirectToLoginPage();
