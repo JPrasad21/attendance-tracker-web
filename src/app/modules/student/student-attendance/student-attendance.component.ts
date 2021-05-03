@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SnackbarService } from 'src/app/core/snackbar/snackbar.service';
 import { AttendanceDetails } from 'src/app/typings';
 import { AuthService } from '../../auth/auth.service';
 import { StudentService } from '../student.service';
@@ -11,7 +12,7 @@ import { StudentService } from '../student.service';
 export class StudentAttendanceComponent implements OnInit {
 
   attendanceExist = false;
-  constructor(private authService: AuthService, private studentService: StudentService) { }
+  constructor(private authService: AuthService, private studentService: StudentService, private toast: SnackbarService) { }
 
   ngOnInit(): void {
     this.checkAttendance();
@@ -33,6 +34,7 @@ export class StudentAttendanceComponent implements OnInit {
     }
     this.studentService.markAttendance(attendanceObj).subscribe((x: any) => {
       this.attendanceExist = x.data;
+      this.toast.openSnackBar('Attendance marked for today!')
     })
   }
 }

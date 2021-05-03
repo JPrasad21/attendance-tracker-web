@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { SnackbarService } from 'src/app/core/snackbar/snackbar.service';
 import { AuthService } from '../auth.service';
 
 @Component({

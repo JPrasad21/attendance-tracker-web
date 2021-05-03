@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from 'src/app/modules/shared/shared.module';
 import { HttpTokenInterceptorService } from './interceptor/http-interceptor/http-interceptor';
 import { SeederComponent } from './seeder/seeder.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SeederComponent } from './seeder/seeder.component';
     AuthModule,
     StudentModule,
     TeacherModule,
+    MatSnackBarModule,
     BrowserAnimationsModule,
     HttpClientModule,
     RouterModule,
