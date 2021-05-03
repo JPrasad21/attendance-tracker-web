@@ -3,11 +3,11 @@
     <span class="title-wrapper__name">Attendance Tracker</span>
   </div>
   <ul class="nav-wrapper">
+    <span class="userName">{{ userInfo.fullName }}</span>
     <span class="material-icons profileIcon" [matMenuTriggerFor]="userMenu"
       >account_circle</span
     >
     <mat-menu #userMenu="matMenu">
-      <div class="menuItem">{{ userInfo.fullName }}</div>
       <div class="menuItem" (click)="logout()">Logout</div>
     </mat-menu>
   </ul>

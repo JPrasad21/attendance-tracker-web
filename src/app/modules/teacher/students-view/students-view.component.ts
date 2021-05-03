@@ -18,11 +18,15 @@ export class StudentsViewComponent implements OnInit {
   studentsList: StudentDetails[];
   filterDate = new Date();
 
+  selectedClass: ClassDetails;
   @ViewChild(MatSort, { static: false }) sort: MatSort;
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   constructor(private teacherService: TeacherService) {
     this.teacherService.selectedClass$.subscribe(x => {
-      if (x) this.getStudentsInfo();
+      if (x) {
+        this.selectedClass = x;
+        this.getStudentsInfo();
+      }
     })
   }
 

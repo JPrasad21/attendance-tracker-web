@@ -1,5 +1,12 @@
 <div class="studentViewWrapper">
-  <h4 class="studentViewHeader">Students</h4>
+  <h4 class="studentViewHeader">
+    {{
+      "Students of " +
+        selectedClass.className +
+        " - " +
+        selectedClass.sectionName
+    }}
+  </h4>
   <div class="studentViewSection">
     <div class="studentView mat-elevation-z8">
       <table
