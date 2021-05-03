@@ -9,7 +9,7 @@ export class TeacherService {
 
   constructor(private apiService: TeacherApiService) { }
 
-  getClassAndSectionsInfo() {
-    return this.apiService.getClassAndSectionsInfo();
+  getClassAndSectionsInfo(date: string) {
+    return this.apiService.getClassAndSectionsInfo(date);
   }
 }

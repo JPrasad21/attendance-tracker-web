@@ -7,6 +7,7 @@ export interface UserDetails {
 export interface ClassDetails {
   className: string;
   sectionName: string;
+  percentage: number;
   _id: string;
 }
 export interface StudentDetails extends UserDetails {
@@ -19,14 +20,6 @@ export interface AttendanceDetails {
   studentId: string;
   classId: string;
   status: string;
-}
-export interface ClassViewModel {
-  className: string;
-  classId: string
-  sectionName: string;
-  sectionId: string;
-  students: UserDetails[];
-  percentage: string;
 }
 export interface SectionDetails {
   _id: string;

@@ -3,7 +3,7 @@ import { TeacherService } from '../teacher.service';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { ClassDetails, ClassViewModel } from 'src/app/typings';
+import { ClassDetails } from 'src/app/typings';
 
 @Component({
   selector: 'app-teacher-attendance',
@@ -13,10 +13,10 @@ import { ClassDetails, ClassViewModel } from 'src/app/typings';
 export class TeacherAttendanceComponent implements OnInit, AfterViewInit {
 
   classViewColumns: string[] = ['className', 'sectionName', 'percentage'];
-  dataSource: MatTableDataSource<ClassViewModel>;
+  dataSource: MatTableDataSource<ClassDetails>;
 
   classAndSections: ClassDetails[];
-  classViewModel: ClassViewModel[];
+  filterDate = new Date();
 
   @ViewChild(MatSort, { static: false }) sort: MatSort;
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
@@ -28,31 +28,11 @@ export class TeacherAttendanceComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
   }
   getClassAndSectionsInfo() {
-    this.teacherService.getClassAndSectionsInfo().subscribe((x: any) => {
+    this.teacherService.getClassAndSectionsInfo(this.filterDate.toLocaleDateString()).subscribe((x: any) => {
       this.classAndSections = x.data;
-      this.transformToClassView();
+      this.dataSource = new MatTableDataSource(this.classAndSections);
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
     })
-  }
-  transformToClassView() {
-    let classView: ClassViewModel[] = [];
-    this.classAndSections.forEach(classObj => {
-      const { _id: classId, className } = classObj;
-      // classObj.sections.forEach(section => {
-      //   const { _id: sectionId, sectionName, studentId } = section;
-      //   classView.push({
-      //     className,
-      //     classId,
-      //     sectionName,
-      //     sectionId,
-      //     students: studentId,
-      //     percentage: ''
-      //   })
-      // })
-    });
-    this.classViewModel = classView;
-    this.dataSource = new MatTableDataSource(this.classViewModel);
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-
   }
 }

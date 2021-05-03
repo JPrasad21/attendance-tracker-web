@@ -8,8 +8,8 @@ export class TeacherApiService {
 
   constructor(private httpService: BaseService) { }
 
-  getClassAndSectionsInfo() {
-    return this.httpService.get(`/class/`);
+  getClassAndSectionsInfo(date: string) {
+    return this.httpService.get(`/class/date/${encodeURIComponent(date)}`);
   }
 
 }
