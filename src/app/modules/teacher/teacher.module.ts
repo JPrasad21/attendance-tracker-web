@@ -8,12 +8,16 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { SharedModule } from '../shared/shared.module';
+import { ClassViewComponent } from './class-view/class-view.component';
+import { StudentsViewComponent } from './students-view/students-view.component';
 
 @NgModule({
   declarations: [
     ProfileComponent,
     TeacherLayoutComponent,
-    TeacherAttendanceComponent
+    TeacherAttendanceComponent,
+    ClassViewComponent,
+    StudentsViewComponent
   ],
   imports: [
     CommonModule,

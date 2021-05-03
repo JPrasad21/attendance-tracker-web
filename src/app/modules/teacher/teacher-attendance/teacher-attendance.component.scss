@@ -1,22 +1,14 @@
 @import "/src/assets//styles/variables.scss";
 
 .attendanceWrapper {
+  display: flex;
   height: 100%;
-  overflow-y: auto;
-  padding: 40px;
-  .attendanceHeader {
-    color: $font-text-1;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 40px;
+  .classView {
+    flex: 50%;
   }
-  .attendanceSection {
-    // height: 100%;
-    // overflow-y: auto;
-    .classView {
-      .classViewTable {
-        width: 100%;
-      }
-    }
+  .studentsView {
+    flex: 50%;
+    padding: 40px;
+    border-left: 1px solid $white-12;
   }
 }
