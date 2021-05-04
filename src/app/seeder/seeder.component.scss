@@ -2,11 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
   height: 100%;
   width: 100%;
-  position: relative;
-  top: -60px;
+  background: linear-gradient(70deg, #c576c5, blueviolet);
   .seeder {
     width: 500px;
     background: #ececec;
@@ -17,5 +15,16 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    .actionBtn {
+      font-weight: 700;
+      font-size: 16px;
+      height: 40px;
+      ::ng-deep .mat-button-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 10px;
+      }
+    }
   }
 }

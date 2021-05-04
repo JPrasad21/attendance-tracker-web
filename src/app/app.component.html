@@ -1,6 +1,6 @@
 <div class="appWrapper">
   <app-header *ngIf="userDetails"></app-header>
-  <div *ngIf="!userDetails"></div>
+  <!-- <div *ngIf="!userDetails"></div> -->
   <router-outlet></router-outlet>
-  <app-footer></app-footer>
+  <app-footer *ngIf="userDetails"></app-footer>
 </div>

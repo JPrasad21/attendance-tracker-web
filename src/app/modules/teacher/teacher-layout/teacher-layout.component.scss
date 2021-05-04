@@ -1,7 +1,7 @@
 @import "/src/assets//styles/variables.scss";
 .layoutWrapper {
   display: flex;
-  height: 100%;
+  height: calc(100% - 110px);
   .sideMenu {
     flex: 1 1 200px;
     background-color: $white-13;

@@ -1,5 +1,5 @@
 <div class="seederWrapper">
-  <div class="seeder">
+  <mat-card class="seeder mat-elevation-z8">
     <p>Click the button to add Class, Teacher and Students data to Database</p>
     <div>
       <button
@@ -7,13 +7,16 @@
         color="primary"
         type="submit"
         (click)="addData()"
+        [disabled]="loading"
+        class="actionBtn"
       >
         Add Data
+        <mat-spinner *ngIf="loading" [diameter]="25"></mat-spinner>
       </button>
     </div>
     <p *ngIf="loading">
       Please wait. This might take few seconds to complete...
     </p>
     <p *ngIf="result && !loading">{{ result }}</p>
-  </div>
+  </mat-card>
 </div>
